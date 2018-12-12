@@ -1,0 +1,70 @@
+<div class="myCont form-group">
+  <input placeholder="Ingrese Nombre o Codigo" (input)="filterOnKey()"  type="text" [(ngModel)]="filtro" class="form-control" id="BusquedaInput" >
+  
+  <button class="btn" (click)="addItemForm()">Agregar Producto 
+  </button>
+  {{filtro}}
+  
+  </div>  <!--el input id Producto deberia funcionar con un autocompletar, que traiga los datos nombre precio y num provedor, y deje la
+  cantidad en 0, para poder agregar cuantos de ese producto necesitamos. tambien deberia poder modificarse los demas campos desde este form-->
+  <form *ngIf=showForm>
+      <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">ID Producto</label>
+          <div class="col-sm-10">{{id_prod}}
+            <input type="number" [(ngModel)]="id_prod" (keyup)="filterProd()" name="idprod" class="form-control" id="inputName" placeholder="ID Producto">
+          </div>
+        </div>
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre</label>
+      <div class="col-sm-10">
+        <input type="text" [(ngModel)]="nombre" name="nombre" class="form-control" id="inputName" placeholder="Nombre">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputCant" class="col-sm-2 col-form-label">Cantidad</label>
+      <div class="col-sm-10">
+        <input type="number" [(ngModel)]="newStock" name="cantidad" class="form-control" id="inputCant" placeholder="Cantidad">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputCant" class="col-sm-2 col-form-label">Precio</label>
+      <div class="col-sm-10">
+        <input type="number" [(ngModel)]="precio" name="precio" class="form-control" id="inputPrecio" placeholder="Precio">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputCant" class="col-sm-2 col-form-label">ID Proovedor</label>
+      <div class="col-sm-10">
+        <input type="number" [(ngModel)]="id_proovedor" name="idproov" class="form-control" id="inputProov" placeholder="ID Proovedor">
+      </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="submit" (click)="addItem()" class="btn btn-primary">Agregar</button>
+          <button type="cancel" (click)="cancelButton()" class="btn btn-secondary">Cancelar</button>
+        </div>
+      </div>
+  </form>
+<h2>PRODUCTOS</h2>
+<table  class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID Producto</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Precio</th>
+        <th scope="col">ID Proovedor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prod of stock" >
+        <td>{{prod.id_prod}}</td>
+        <td>{{prod.nombre}}</td>
+        <td>{{prod.stock}}</td>
+        <td>{{prod.precio}}</td>
+        <td>{{prod.id_proovedor}}</td>
+        <td><button class="btn btn-danger" (click)="deleteItem(prod.id_prod)">X </button></td>
+      </tr>
+     
+    </tbody>
+  </table>

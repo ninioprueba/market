@@ -1,0 +1,10 @@
+.myCont{
+    margin-inline-end: 30%;
+    margin-inline-start: 30%;
+}
+form input{
+    width: 50%;
+}
+button { 
+    margin: 5px;
+}

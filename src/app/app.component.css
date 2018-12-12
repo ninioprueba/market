@@ -1,0 +1,29 @@
+
+.mynav{
+    list-style: none;
+    margin: 0; 
+    
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow:row wrap;
+    -webkit-flex-flow: row wrap;
+    justify-content: flex-end;
+}
+.mynav .btn{
+    background-color: orange;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    flex-direction: row;
+    font-weight: 600;
+    margin: 4px;
+}
+.mynav .btn:hover{
+    background-color: aqua;
+}
+.mydiv{
+    margin: 25px;
+}

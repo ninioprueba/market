@@ -1,0 +1,26 @@
+td input{
+    width: 50px;
+}
+.btn-danger {
+    font-weight: 600;
+}
+.mydiv{
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-primary{
+    background-color: orange;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    flex-direction: row;
+    font-weight: 600;
+    margin: 4px;
+    color: black;
+}
+.btn-primary:hover{
+    background-color: aqua;
+}
+.priceDiv {
+    font-size: 40px;
+}

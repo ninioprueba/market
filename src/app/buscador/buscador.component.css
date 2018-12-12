@@ -1,0 +1,24 @@
+.my-cont{
+    margin-inline-end: 30%;
+    margin-inline-start: 30%;
+}
+
+.btn{
+    background-color: orange;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    flex-direction: row;
+    font-weight: 600;
+    margin: 4px;
+}
+.btn:hover{
+    background-color: aqua;
+}
+.search-result{
+    position: absolute;
+    color: red;
+    background-color: aliceblue;
+    font-weight: 450;
+}
+.search-result {cursor: context-menu;}

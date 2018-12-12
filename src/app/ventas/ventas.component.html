@@ -1,0 +1,28 @@
+<app-buscador (valueChange)="displayPrice($event)"></app-buscador>
+
+<h2>NUEVA VENTA</h2>
+<div class="priceDiv">Total Venta: ${{precioTotal}}</div>
+<div class="mydiv"><button (click)="finalizarVenta()" class="btn btn-primary">Finalizar Compra</button></div>
+<table  class="table" >
+    <thead>
+      <tr>
+        <th scope="col">ID Producto</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Precio unit.</th>
+        <th scope="col">Precio Total</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prod of venta" >
+        <td>{{prod.id_prod}}</td>
+        <td>{{prod.nombre}}</td>
+        <td><input [(ngModel)]="prod.cant" (input)="onChange($event.target.value, prod.id_prod)" type="number" name="cant" id="cant" min="1"></td>
+        <td>{{prod.precio_unit}}</td>
+        <td>{{prod.monto}}</td>
+        <td><button class="btn btn-danger" (click)="deleteItem(prod.id_prod)">X </button></td>
+      </tr>
+     
+    </tbody>
+  </table>

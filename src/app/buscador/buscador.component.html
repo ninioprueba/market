@@ -1,0 +1,14 @@
+<div class="my-cont form-group">
+<label for="BusquedaInput" > </label>
+<input placeholder="Ingrese Nombre o Codigo" (input)="onKey()" (keyup.enter)="addingWithEnter()" type="text" [(ngModel)]="busqueda" class="form-control" id="BusquedaInput" >
+
+<button class="btn" (click)="myFn()">Buscar 
+</button>
+{{busqueda}}
+<div class="search-result" *ngIf="busqueda">
+    <p *ngFor="let prod of filteredItems" >
+     <span (click)="addToVenta(prod)"> {{prod.nombre}} </span>
+     
+    </p>
+</div>
+</div>
